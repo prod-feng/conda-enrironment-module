@@ -34,9 +34,9 @@ So here what happens is: conda avtivate changed $PATH, but not "$PATH_modshare";
 Most of the time, this warning won't cause issue. While in some cases, it may cause you to use unexpected lib/excutables, since the "module" command will try to corrrct "$PATH" using it's "$PATH_modshare".
 When you see this warning, you can double the $PATH virable to verify if it is the one you expect, otherwise you may need to manually corret it.
 
-To avoid this issue, you need to use "module" to load all of the runtime environment, at the end, you can then run "conda activate XXX".
+To avoid this issue, you need to use "module" to load all of the runtime environment modules, at the end, you can then run "conda activate XXX".
 
-And before you run "module rm YYY", you need run "conda deactivate" command first to reverse back to original state.
+And before you run "module rm YYY", you need run "conda deactivate" command first to reverse back to original state, if you activate and conda env before.
 
 
 There is another quick way to fix this issue. It is to modify it's source file of "/apps/anaconda3/lib/python3.7/site-packages/conda/activate.py".
