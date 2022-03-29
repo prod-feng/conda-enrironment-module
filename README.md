@@ -23,7 +23,7 @@ usage counters were adjusted to match. Note that this may mean that module unloa
 may not work correctly
 ...
 ```
-This because that bothe conda and module are used to manage the environment here, and they two have different ways to do so.
+This is because that bothe conda and module are used to manage the environment here, and the two have different ways to do so.
 
 conda activate command will change the default $PATH of "/apps/anaconda3/bin" to the new conda env of "alpha" here to "/apps/anaconda3/envs/alphafold/bin".
 
@@ -33,6 +33,11 @@ So here what happens is: conda avtivate changed $PATH, but not "$PATH_modshare";
 
 Most of the time, this warning won't cause issue. While in some cases, it may cause you to use unexpected lib/excutables, since the "module" command will try to corrrct "$PATH" using it's "$PATH_modshare".
 When you see this warning, you can double the $PATH virable to verify if it is the one you expect, otherwise you may need to manually corret it.
+
+To avoid this issue, you need to use "module" to load all of the runtime environment, at the end, you can then run "conda activate XXX".
+
+And before you run "module rm YYY", you need run "conda deactivate" command first to reverse back to original state.
+
 
 There is another quick way to fix this issue. It is to modify it's source file of "/apps/anaconda3/lib/python3.7/site-packages/conda/activate.py".
 
