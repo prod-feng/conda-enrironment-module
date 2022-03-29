@@ -1,4 +1,4 @@
-# conda-enrironment-module
+# conda-environment-module
 
 The "module" environment package is very popular in High Performance Computing filed, and the anacaonda is also becoming popular in HPC too. People usually use them both at the same time to mamage runtime environment.
 
