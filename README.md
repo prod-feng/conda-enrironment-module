@@ -6,7 +6,9 @@ Sometime, when I use anaconda in my environment, it seems it has conflicts with 
 
 For exapmple, using conda, I want to activate an env named "alpha"
 
->> module add basic  (this command will triger module command to initialize "$PATH_modshare",see follwing for explanation)
+>> module add basic  
+
+(this command will triger module command to initialize "$PATH_modshare",see follwing for explanation)
 >> conda activate alpha
 
 Then, I use module commane to set my GCC9 environment:
