@@ -27,7 +27,7 @@ This is because that both conda and module are used to manage the environment he
 
 conda activate command will change the default $PATH of "/apps/anaconda3/bin" to the new conda env of "alpha" here to "/apps/anaconda3/envs/alphafold/bin".
 
-While at the same time, module command will use it's own varaible named "$PATH_modshare" to track it's original "$PATH".
+While at the same time, module command will use it's own variable named "$PATH_modshare" to track it's original "$PATH".
 
 So here what happens is: conda avtivate changed $PATH, but not "$PATH_modshare"; then when you try to use "module" command to load/rm a module environment, the error occurs.
 
@@ -36,7 +36,7 @@ When you see this warning, you can double check the $PATH variable to verify if 
 
 To avoid this issue, you need to use "module" to load all of the runtime environment modules, at the end, you can then run "conda activate XXX".
 
-And before you run "module rm YYY", you need run "conda deactivate" command first to reverse back to original state, if you activate a conda env before.
+And before you run "module rm YYY", you need run "conda deactivate" command first to reverse back to original state of $PATH, if you activate a conda env before.
 
 
 There is another quick way to fix this issue. It is to modify it's source file of "/apps/anaconda3/lib/python3.7/site-packages/conda/activate.py".
