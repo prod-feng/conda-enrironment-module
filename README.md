@@ -68,6 +68,8 @@ and in function "build_deactivate", also near the end of this function:
         }
 ```
 
+And also the function of "build_reactivate', which get called after installation,upgradation, and removal of packages.
+
 This fix looks like can fix the issue, at least temporarily.
 
 
