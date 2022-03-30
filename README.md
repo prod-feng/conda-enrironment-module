@@ -41,7 +41,7 @@ And before you run "module rm YYY", you need run "conda deactivate" command firs
 
 There is another quick way to fix this issue. It is to modify it's source file of "/apps/anaconda3/lib/python3.7/site-packages/conda/activate.py".
 
-In this file, in function "_build_activate_stack", near the end of the function, add one line to let conda to manage the PATH_modshare too:
+In this file, in function "_build_activate_stack", near the end of the function, add one line to let conda to manage the PATH_modshare every time it changes the $PATH:
 
 ```text
         #add the fllowing line here to manage PATH_modshare
@@ -72,5 +72,29 @@ And also the function of "build_reactivate', which get called after installation
 
 This fix looks like can fix the issue, at least temporarily.
 
+The issue can be avoided partially via "--stack" option of "conda activate". This option will prepend the new path to the $PATH variable, not modify the original anaconda bin path to the new env's. For example:
 
+```text
+>module load base
+
+>conda activate --stack alpha 
+
+>module load gcc9
+...
+>module rm gcc9
+```
+
+At the point, everythin is fine. 
+
+After that, you deactivate the "alpha" env:
+```text
+>conda deactivate
+...
+>module load cmake
+
+```
+
+Now the same warning message pops out.
+
+So the solution is: 1. Use module command to load all needed environment modules, the activate your conda env. After job is done, deactivate your env, then can module rm. Or exit the session;2. Modify the active.py source file, update $PATH_modshare same as update $PATH each time, like the above.
 
