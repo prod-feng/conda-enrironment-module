@@ -36,6 +36,8 @@ When you see this warning, you can double check the $PATH variable to verify if 
 
 To avoid this issue, you need to use "module" to load all of the runtime environment modules, at the end, you can then run "conda activate XXX".
 
+Remeber every time you run "module" load or rm, it will update the $PATH, and $PATH_modshare.
+
 And before you run "module rm YYY", you need run "conda deactivate" command first to reverse back to original state of $PATH, if you activate a conda env before.
 
 
