@@ -96,5 +96,5 @@ After that, you deactivate the "alpha" env:
 
 Now the same warning message pops out.
 
-So the solution is: 1. Use module command to load all needed environment modules, then activate your conda env(e.g., "alpha"). After job is done, deactivate your env, then can module rm. Or exit the session;2. Modify the active.py source file, update $PATH_modshare same as update $PATH each time, like the above.
+So the solution is: 1. Use module command to load all needed environment modules, then activate your conda env(e.g., "alpha"). After job is done, deactivate your env, then can module rm. Or exit the session;2. Modify the activate.py source file, update $PATH_modshare same as update $PATH each time, like the above.
 
