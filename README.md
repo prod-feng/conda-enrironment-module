@@ -72,7 +72,7 @@ And also the function of "build_reactivate', which get called after installation
 
 This fix looks like can fix the issue, at least temporarily.
 
-The issue can be avoided partially via "--stack" option of "conda activate". This option will prepend the new path to the $PATH variable, not modify the original anaconda bin path to the new env's. For example:
+The issue can be avoided partially via "--stack" option of "conda activate". This option will prepend the new path to the $PATH variable, other than modify the original anaconda bin path to be the new env. For example:
 
 ```text
 >module load base
