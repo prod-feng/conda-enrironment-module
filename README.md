@@ -36,7 +36,7 @@ When you see this warning, you can double the $PATH virable to verify if it is t
 
 To avoid this issue, you need to use "module" to load all of the runtime environment modules, at the end, you can then run "conda activate XXX".
 
-And before you run "module rm YYY", you need run "conda deactivate" command first to reverse back to original state, if you activate and conda env before.
+And before you run "module rm YYY", you need run "conda deactivate" command first to reverse back to original state, if you activate a conda env before.
 
 
 There is another quick way to fix this issue. It is to modify it's source file of "/apps/anaconda3/lib/python3.7/site-packages/conda/activate.py".
