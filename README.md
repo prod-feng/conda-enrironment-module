@@ -27,14 +27,14 @@ This is because that both conda and module are used to manage the environment he
 
 conda activate command will change the default $PATH of "/apps/anaconda3/bin" to the new conda env of "alpha" here to "/apps/anaconda3/envs/alphafold/bin".
 
-While at the same time, module command will use it's own variable named "$PATH_modshare" to track it's original "$PATH".
+While at the same time, module command will use it's own variable named "$PATH_modshare" to keep tracking it's original "$PATH".
 
 So here what happens is: conda avtivate changed $PATH, but not "$PATH_modshare"; then when you try to use "module" command to load/rm a module environment, the error occurs.
 
 Most of the time, this warning won't cause issue. While in some cases, it may cause you to use unexpected/wrong lib/excutables, since the "module" command will try to correct "$PATH" using it's "$PATH_modshare".
 When you see this warning, you can double check the $PATH variable to verify if it is the one you expect, otherwise you may need to manually corret it.
 
-To avoid this issue, you need to use "module" to load all of the runtime environment modules, at the end, you can then run "conda activate XXX".
+To avoid this issue, you need to use "module" to load all of the runtime environment modules at first, and then, you can run "conda activate XXX".
 
 Remember every time you run "module" load or rm, it will update the $PATH, and $PATH_modshare.
 
