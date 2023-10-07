@@ -1,7 +1,7 @@
 # conda-environment-module
 
 
-# UPDATE: this "$PATH_modshare counter" issue only happens to the environment-modules versions from 4.0 to 4.8. The older version of 3, and most recent version of 5, do not have this problem.
+## UPDATE: this "$PATH_modshare counter" issue only happens to the environment-modules versions from 4.0 to 4.8. The older version of 3, and most recent version of 5, do not have this problem.(check it's reference counting mechanism)
 
 
 
