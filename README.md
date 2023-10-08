@@ -4,7 +4,7 @@
 ## UPDATE: this "$PATH_modshare counter" issue only happens to the environment-modules versions from 4.0 to 4.8. The older version of 3, and most recent version of 5, do not have this problem.(check it's reference counting mechanism)
 
 
-CentOS 7, environment-modules 4.0, conda 4.2.
+CentOS 7, environment-modules 4.0, conda 4.12.
 
 The "module" environment package is very popular in High Performance Computing filed, and the anacaonda is also becoming popular in HPC too. People usually use them both at the same time to mamage runtime environment.
 
