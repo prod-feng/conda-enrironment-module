@@ -4,6 +4,7 @@
 ## UPDATE: this "$PATH_modshare counter" issue only happens to the environment-modules versions from 4.0 to 4.8. The older version of 3, and most recent version of 5, do not have this problem.(check it's reference counting mechanism)
 
 
+CentOS 7, environment-modules 4.0, conda 4.2.
 
 The "module" environment package is very popular in High Performance Computing filed, and the anacaonda is also becoming popular in HPC too. People usually use them both at the same time to mamage runtime environment.
 
@@ -103,5 +104,12 @@ After that, you deactivate the "alpha" env:
 
 Now the same warning message pops out.
 
-So the solution is: 1. Use module command to load all needed environment modules, then activate your conda env(e.g., "alpha"). After job is done, deactivate your env, then can module rm. Or exit the session;2. Modify the activate.py source file, update $PATH_modshare same as update $PATH each time, like the above.
+So the solution are: 
+
+1. Use module command to load all needed environment modules, then activate your conda env(e.g., "alpha"). After job is done, deactivate your env, then can module rm. Or exit the session;
+
+2. Modify the activate.py source file, update $PATH_modshare same as update $PATH each time, like the above.
+
+3. Upgrade the envieonment-modules to version 5 and above.
+
 
